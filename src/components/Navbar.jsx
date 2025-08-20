@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { IoClose } from "react-icons/io5";
-
-
+import { SiSnapcraft } from "react-icons/si";
+// import { SiCssdesignawards } from "react-icons/si";
 const Navbar = () => {
 
   const [open,setOpen] = useState(false)
@@ -27,8 +27,9 @@ const Navbar = () => {
     
           <nav className=" bg-gradient-to-t from-blue-700 to-purple-500 fixed w-full z-50 shadow-2xl font-serif">
             <div className="flex text-2xl font-bold  justify-between items-center py-3">
-              <div className=" ml-5">
-                <h1 className="font-extrabold lg:ml-25 lg:text-3xl text-white">SkillCraft</h1>
+              <div className=" ml-5 flex gap-2 items-center">
+                <p className="text-white font-extrabold">{<SiSnapcraft size={30}/>}</p>
+                <h1 className="font-extrabold lg:ml-25 lg:text-3xl text-white">  SkillCraft</h1>
               </div>
               <ul className="text-xl font-semibold flex mr-5 items-center gap-5 max-sm:hidden lg:mr-20 text-white">
                  {navlinks.map((link)=>(
@@ -42,7 +43,9 @@ const Navbar = () => {
                     </Link>
                   </li>
                  ))}
+                 <Link to="/service">
                   <button className="bg-transparent border-1 px-3 py-1 rounded-xl hover:bg-white hover:text-purple-700 ">Get Started</button>
+                  </Link>
               </ul>
               {/* hambar menu */}
               <div className="sm:hidden mr-5 text-white font-extrabold">
@@ -71,7 +74,9 @@ const Navbar = () => {
                       </li>
 
                    ))}
+                   <Link to="/service">
                    <button className="bg-transparent border-1 border-white px-3 py-2 rounded-xl hover:bg-white hover:text-purple-700 ">Get Started</button>
+                   </Link>
                    </ul>
               </div>
           </nav>
